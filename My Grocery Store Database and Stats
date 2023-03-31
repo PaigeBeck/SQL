@@ -1,0 +1,25 @@
+--Create grocery store database 
+
+CREATE TABLE store (id INTEGER PRIMARY KEY,item TEXT, in_stock INTEGER, price NUMERIC, score INTEGER);
+
+INSERT INTO store VALUES (1,"shirt",10,5.99,5);
+INSERT INTO store VALUES (2,"shoes",3,20.50,4);
+INSERT INTO store VALUES (3,"womens socks",30,3.88,4);
+INSERT INTO store VALUES (4,"sandles",6,15.50,3);
+INSERT INTO store VALUES (5,"bra",4,19.00,5);
+INSERT INTO store VALUES (6,"panties",6,7.00,5);
+INSERT INTO store VALUES (7,"boxers",25,12.50,3);
+INSERT INTO store VALUES (8,"briefs",20,13.00,2);
+INSERT INTO store VALUES (9,"mens socks",40,3.00,1);
+INSERT INTO store VALUES (10,"stripped shirt",10,6.00,5);
+INSERT INTO store VALUES (11,"thigh highs",13,8.50,1);
+INSERT INTO store VALUES (12,"no show socks",19,7.89,2);
+INSERT INTO store VALUES (13,"crop top",49,9.83,3);
+INSERT INTO store VALUES (14,"tank top",23,10.00,3);
+INSERT INTO store VALUES (15,"gloves",12,11.99,4);
+
+-- Display database by descending price
+SELECT * FROM store ORDER BY "price" desc;
+
+-- Display items rated higher than 3
+SELECT item, score FROM store WHERE score>3; 
