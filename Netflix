@@ -1,4 +1,4 @@
-In this code I am querying a database that has two tables holding Netflix data to answer questions about the data.
+# In this code I am querying a database that has two tables holding Netflix data to answer questions about the data.
 
 #1 How many movie titles are there in the database? (movies only, not tv shows)
 SELECT COUNT(*) 
