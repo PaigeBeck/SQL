@@ -1,0 +1,32 @@
+# For this sql I am using a fortune 500 data base to answer questions that could help future employees decide if the company is the right fit for them
+
+#1 What company has the highest employee turn over rate?
+SELECT company_name, avg_employee_tenure
+FROM fortune_companies
+ORDER BY avg_employee_tenure asc;
+
+#2 What industries have an average revenue above 250 million and what is their revenue?
+SELECT industry, ROUND(AVG(revenue),1) AS avg_revenue
+FROM fortune_companies
+GROUP BY industry
+HAVING avg_revenue>=250;
+
+#3 What company in the telecommunications industry makes the least in revenue?
+SELECT company_name, min(revenue)
+FROM fortune_companies
+WHERE industry = "Telecommunications"; 
+
+#4 what companies have health care and at least 13 paid time off days?
+SELECT company_name 
+FROM fortune_companies
+WHERE healthcare_benefits=1 
+AND paid_time_off_days>=13;
+
+#5 Is the company mother friendly? 
+SELECT company_name,
+CASE WHEN maternity_leave_weeks>=10 THEN "Mother Friendly"
+WHEN maternity_leave_weeks>=8 THEN "Acceptably Mother Friendly"
+ELSE "Abysmal for Mothers"
+END AS "mother_friendlyness"
+FROM fortune_companies
+ORDER BY mother_friendlyness desc;
